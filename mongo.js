@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.set('useUnifiedTopology', true);
+mongoose.set('useUnifiedTopology', true)
 
 if (process.argv.length < 3) {
     console.log('give password as argument')
@@ -32,7 +32,7 @@ if (name && number) {
         mongoose.connection.close()
     })
 } else {
-    console.log("phonebook:")
+    console.log('phonebook:')
     Person
         .find({})
         .then(persons => {

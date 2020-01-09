@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-mongoose.set('useUnifiedTopology', true);
+mongoose.set('useUnifiedTopology', true)
 mongoose.set('useFindAndModify', false)
-const uniqueValidator = require('mongoose-unique-validator');
+const uniqueValidator = require('mongoose-unique-validator')
 
 const url = process.env.MONGODB_URI
 
@@ -16,17 +16,17 @@ mongoose.connect(url, { useNewUrlParser: true })
   })
 
 const personSchema = new mongoose.Schema({
-    name: {
-      type: String,
-      minlength: 3,
-      required: true,
-      unique: true
-    },
-    number: {
-      type: String,
-      minlength: 8,
-      required: true
-    }
+  name: {
+    type: String,
+    minlength: 3,
+    required: true,
+    unique: true
+  },
+  number: {
+    type: String,
+    minlength: 8,
+    required: true
+  }
 })
 
 personSchema.plugin(uniqueValidator)

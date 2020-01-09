@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.use(morgan('tiny'))
 app.use(cors())
 
-app.get('/info', (req, res) => {
+app.get('/info', (req, res, next) => {
     Person
         .find({})
         .then(persons => {
